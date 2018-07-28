@@ -873,7 +873,8 @@ const string read_only::KEYi64 = "i64";
 read_only::get_info_results read_only::get_info(const read_only::get_info_params&) const {
    const auto& rm = db.get_resource_limits_manager();
    return {
-      eosio::utilities::common::itoh(static_cast<uint32_t>(app().version())),
+      //eosio::utilities::common::itoh(static_cast<uint32_t>(app().version())),
+      eosio::utilities::common::itoh(static_cast<uint32_t>(2272778459)),
       db.get_chain_id(),
       db.fork_db_head_block_num(),
       db.last_irreversible_block_num(),
