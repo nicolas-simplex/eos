@@ -938,6 +938,7 @@ struct controller_impl {
             emit( self.applied_transaction, trace );
             undo_session.squash();
             hundo_session.squash();
+            hiundo_session.squash();
             return trace;
          }
          trace->elapsed = fc::time_point::now() - trx_context.start;
@@ -977,6 +978,7 @@ struct controller_impl {
 
          undo_session.squash();
          hundo_session.squash();
+         hiundo_session.squash();
       } else {
          emit( self.accepted_transaction, trx );
          emit( self.applied_transaction, trace );
